@@ -1,23 +1,40 @@
 'use strict';
 
-const myShoppingList = document.getElementById('myList');
-const inputItems = document.querySelectorAll('input');
-const myList = document.createElement('ul');
-myList.innerHTML = "My Shopping List:";
-myShoppingList.appendChild(myList); 
-
-function addItemsToList(inputItems, myList) {
-    inputItems.forEach(function (item) {
-        const itemName = item.value;
-        const itemList = document.createElement('li');
-        itemList.innerHTML = itemName;
-        myList.appendChild(itemList);
-    });
-};
-
-generateList.addEventListener('click', function (event) {
-    event.preventDefault();
-
-    addItemsToList(inputItems, myList);
-});
-
+const calculator = {
+    displayValue: '0',
+    firstOperand: null,
+    waitingForSecondOperand: false,
+    operator: null,
+  };
+  
+  function updateDisplay() {
+    const display = document.querySelector('.calculator-screen');
+    display.value = calculator.displayValue;
+  }
+  
+  updateDisplay();
+  
+  const keys = document.querySelector('.calculator-keys');
+  keys.addEventListener('click', (event) => {
+    const { target } = event;
+    if (!target.matches('button')) {
+      return;
+    }
+  
+    if (target.classList.contains('operator')) {
+      console.log('operator', target.value);
+      return;
+    }
+  
+    if (target.classList.contains('decimal')) {
+      console.log('decimal', target.value);
+      return;
+    }
+  
+    if (target.classList.contains('all-clear')) {
+      console.log('clear', target.value);
+      return;
+    }
+  
+    console.log('digit', target.value);
+  });

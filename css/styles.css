@@ -1,77 +1,79 @@
 html {
-  font-size: 16px;
+  font-size: 62.5%;
   box-sizing: border-box;
+  background: #9ccbd5;
 }
 
-*,
-*:before,
-*:after {
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: inherit;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-}
-
-form {
-  border: solid 1px silver;
-  border-radius: 4px;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 1.2rem;
-  justify-content: space-between;
-  padding: 8px;
-}
-
-form label {
-  display: flex;
-  margin: 4px 8px;
-  max-width: 450px;
-  width: 100%;
-}
-
-form input {
-  border: solid 1px #a9a9a9a9;
-  border-radius: 4px;
-  flex: 1 0 100px;
-  margin-left: 8px;
-  padding: 4px;
-  width: 100%;
-}
-
-form button {
-  background-color: #64b448;
-  border-radius: 6px;
+.calculator {
   border: none;
-  color: white;
-  cursor: pointer;
-  font-size: 1.1rem;
-  font-weight: 700;
-  padding: 8px 24px;
-  text-transform: uppercase;
-  width: 50%;
+  background-color: #7ea3ac;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
 }
 
-.wrapper--button {
-  display: flex;
-  justify-content: center;
-  margin: 8px auto;
+.calculator-screen {
+  border-radius: 5px 5px 0px 0px;
   width: 100%;
+  font-size: 5rem;
+  height: 80px;
+  border: none;
+  background-color: #ffffff;
+  color: #0c3954;
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 10px;
 }
 
-p {
-  font-size: 1.5rem;
-  line-height: 1.3;
-  margin: 2px 0;
+button {
+  height: 60px;
+  border-radius: 3px;
+  border: none;
+  background-color: #0c3954;
+  font-size: 2rem;
+  color: white;
 }
 
-section {
-  margin: 1rem auto;
+button:hover {
+  background-color: #0c38549a;
 }
 
-.wrapper {
-  max-width: 60rem;
-  margin: 0 auto;
+.operator {
+  color: #ffce4c;
+}
+
+.clear {
+  background-color: #ffce4c;
+  color:#0c3954;
+}
+
+.clear:hover {
+  background-color: #ffcf4c65;
+}
+
+.equal {
+  background-color: #0c3954;
+  color: #fff;
+  height: 100%;
+  grid-area: 2 / 4 / 6 / 5;
+}
+
+.equal:hover {
+  background-color: #0c38549a;
+}
+
+.calculator-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
 }

@@ -4,32 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Shopping List</title>
+    <title>DOM Calcultor</title>
     <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
     <section>
         <div class="wrapper">
-            <form>
-                <label>Item 1:
-                    <input type="text" class="input" value="" />
-                </label>
-                <label>Item 2:
-                    <input type="text" class="input" value="" />
-                </label>
-                <label>Item 3:
-                    <input type="text" class="input" value="" />
-                </label>
-                <label>Item 4:
-                    <input type="text" class="input" value="" />
-                </label>
-                <div class="wrapper--button">
-                    <button type="button" id="generateList">Make My List</button>
-                </div>
-            </form>
-        </div>
-        <div id="myList" class="wrapper">
+            <div class="calculator">
 
+            <input type="text" class="calculator-screen" value="" disabled />
+            
+                <div class="calculator-keys">
+                    <button type="button" class="operator">+</button>
+                    <button type="button" class="operator">-</button>
+                    <button type="button" class="operator">*</button>
+                    <button type="button" class="operator">/</button>
+
+                    <button type="button">7</button>
+                    <button type="button">8</button>
+                    <button type="button">9</button>
+
+
+                    <button type="button">4</button>
+                    <button type="button">5</button>
+                    <button type="button">6</button>
+
+
+                    <button type="button">1</button>
+                    <button type="button">2</button>
+                    <button type="button">3</button>
+
+
+                    <button type="button">0</button>
+                    <button type="button" class="decimal">.</button>
+                    <button type="button" class="clear">C</button>
+
+                    <button type="button" class="equal">=</button>
+                </div>
+            </div>
         </div>
     </section>
 </body>
