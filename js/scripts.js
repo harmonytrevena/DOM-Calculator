@@ -7,6 +7,12 @@ const calculator = {
     operator: null,
   };
   
+  function inputDigit(digit) {
+    const { displayValue } = calculator;
+    // Overwrite 'displayValue' if the current value is '0' otherwise append to it
+    calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
+  }
+  
   function updateDisplay() {
     const display = document.querySelector('.calculator-screen');
     display.value = calculator.displayValue;
@@ -15,12 +21,12 @@ const calculator = {
   updateDisplay();
   
   const keys = document.querySelector('.calculator-keys');
-  keys.addEventListener('click', (event) => {
+  keys.addEventListener('click', function (event) {
     const { target } = event;
     if (!target.matches('button')) {
       return;
     }
-  
+
     if (target.classList.contains('operator')) {
       console.log('operator', target.value);
       return;
@@ -31,10 +37,11 @@ const calculator = {
       return;
     }
   
-    if (target.classList.contains('all-clear')) {
+    if (target.classList.contains('clear')) {
       console.log('clear', target.value);
       return;
     }
   
-    console.log('digit', target.value);
+    inputDigit(target.value);
+    updateDisplay();
   });
