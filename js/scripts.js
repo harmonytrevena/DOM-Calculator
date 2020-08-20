@@ -4,7 +4,8 @@ const input = document.getElementById('input'),
     numbers = document.querySelectorAll('.numbers'), // number button 
     operators = document.querySelectorAll('.operator'), // operator buttons
     result = document.querySelector('.equal'), // equal button
-    reset = document.querySelector('.clear'); // clear button
+    reset = document.querySelector('.clear'), // clear button
+    decimals = document.querySelectorAll('.decimal');
 
 let resultDisplayed = false; // flag to keep an eye on what output is displayed
 
@@ -19,6 +20,13 @@ numbers.forEach(function (number){
 
 operators.forEach(function (operator){
     operator.addEventListener('click', function (){
+        input.innerHTML += this.value;
+        numberOperatorsArray = [...numberOperatorsArray, this.value];
+    });
+});
+
+decimals.forEach(function (decimal){
+    decimal.addEventListener('click', function (){
         input.innerHTML += this.value;
         numberOperatorsArray = [...numberOperatorsArray, this.value];
     });
