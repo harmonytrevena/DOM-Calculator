@@ -50,7 +50,7 @@ result.addEventListener('click', function (){
         // used for division
         let divide = resultArray.indexOf("/");
         while (divide !== -1) {
-            resultArray.splice(divide-1, 3, resultArray[divide - 1] * resultArray[divide + 1]);
+            resultArray.splice(divide-1, 3, resultArray[divide - 1] / resultArray[divide + 1]);
             divide = resultArray.indexOf("/");
         }
 
