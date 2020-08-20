@@ -1,4 +1,5 @@
 html {
+  font: sans-serif;
   font-size: 62.5%;
   box-sizing: border-box;
   background: #9ccbd5;
@@ -30,6 +31,7 @@ html {
   background-color: #ffffff;
   color: #0c3954;
   text-align: right;
+  padding-top: 13px;
   padding-right: 20px;
   padding-left: 10px;
 }
